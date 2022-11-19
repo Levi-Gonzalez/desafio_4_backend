@@ -10,17 +10,17 @@ class Container {
     }
 
     getById (id){
-        const obj = this.products.find((product) =>  product.id ===id);
+        const obj = this.products.find((product) =>  product.id === id);
         if (obj){
             return obj
         }
         else {
             return ERROR
         }
-    }
+    } 
     create(obj){
         const array0fIds = this.products.map((product) => product.id);
-        const maxId = Math.max(... array0fIds);
+        const maxId = array0fIds.length === 0 ? 0 : Math.max(... array0fIds);
         const id = maxId + 1;
         const new0bj = {id, ...obj};
         this.products.push(new0bj)
@@ -32,7 +32,7 @@ class Container {
     }
     deleteById (id){
         return true;
-    }
+    } 
 
     
 }
