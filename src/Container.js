@@ -28,10 +28,22 @@ class Container {
     }
 
     updateById(id, obj){
-        return true
+        const foundObj = this.products.find((product) =>  product.id === id);
+        if(foundObj){
+            const filteredProducts = this.products.filter(
+                (product) => product.id !== id
+            );
+
+            const new0bj = {id, ...obj}
+            this.products = [...filteredProducts, new0bj]
+            return new0bj;
+
+        } else{
+            return ERROR;
+        }
     }
     deleteById (id){
-        return true;
+    const products = products.filter(filterProduct => filterProduct.id !== Number(id))
     } 
 
     

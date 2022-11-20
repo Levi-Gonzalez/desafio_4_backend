@@ -12,17 +12,17 @@
 
     <form action="/api/productos" method="post">
         <div class="mb-3">
-          <label for="title" class="form-label">Nombre del producto</label>
-          <input type="text" class="form-control" id="title" required>
+          <label for="title" class="form-label text-center">Nombre del producto</label>
+          <input type="text" name="title" class="form-control" id="title" required>
         </div>
 
         <div class="mb-3">
-          <label for="price" class="form-label">Precio del producto:</label>
-          <input type="number" class="form-control" id="price" required> 
+          <label for="price" class="form-label text-center">Precio del producto:</label>
+          <input type="number" name="price" class="form-control" id="price" required> 
         </div>
 
         <div class="mb-3">
-            <label for="thumbmail" class="form-label">URL thumbmail:</label>
+            <label for="thumbmail" class="form-label text-center">URL thumbmail:</label>
             <input type="url" name="thumbmail" class="form-control" id="thumbmail" required> 
         </div>
 

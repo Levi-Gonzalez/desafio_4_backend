@@ -15,16 +15,19 @@ router.get("/:id", (req, res) =>{
 });
 router.post("/", (req, res) =>{
 const obj = req.body;
-const new0bj = container.create(obj)
-res.send(new0bj)
+const newProduct = container.create(obj)
+res.send(newProduct)
 });
 router.put("/:id", (req, res) =>{
-    res.send("PUT ID")
+    const id = req.params.id;
+    const obj = req.body;
+    const updateProduct = container.updateById( parseInt(id), obj);
+    res.send(updateProduct);
 });
 router.delete("/:id", (req, res) =>{
-    res.send("DELETE ID")
+    const products = products.filter(filterProduct => filterProduct.id !== Number(id)) 
 });
-
+ 
 module.exports = router;
 
 // Cuando se pasa un parámetro en la misma ruta (get("/:id") se pone "params". Es decir, en la linea 12 pongo "const id = req.params.id"
